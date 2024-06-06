@@ -4,10 +4,10 @@ document.getElementById('calcular').addEventListener('click', function() {
 
     // Lista de stopwords em português
     const stopWords = [
-        "a", "à", "ao", "aos", "as", "às", "de", "da", "das", "do", "dos",
-        "e", "em", "na", "nas", "no", "nos", "o", "os", "um", "uma", "umas", "uns",
-        "com", "por", "para", "se", "não", "sim", "como", "mas", "ou", "nem",
-        "também", "mais", "então", "são", "foi", "era", "é", "ser", "tem",
+        "a", "à", "ao", "aos", "as", "às", "de", "da", "das", "do", "dos", "acoes",
+        "e", "em", "na", "nas", "no", "nos", "o", "os", "um", "uma", "umas", "uns", "voce",
+        "com", "por", "para", "se", "não", "sim", "como", "mas", "ou", "nem", "geral", "estrutura",
+        "também", "mais", "então", "são", "foi", "era", "é", "ser", "tem", "identificacao", "visao",
         "há", "já", "está", "sendo", "pelo", "pelos", "pela", "pelas", "sobre", "etc", "time","times", "atribuicoes",
         "qual", "quem", "que", "papel", "nossos", "sera", "requisitos", "qualificações", "esperamos", "você", "atribuições",
         "será", "seu", "momentos", "operar", "rapida", "usando", "maneira", "padrões", "cenarios", "ter", "atuar",
