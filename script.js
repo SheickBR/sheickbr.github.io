@@ -6,14 +6,14 @@ document.getElementById('calcular').addEventListener('click', function() {
     const stopWords = [
         "a", "à", "ao", "aos", "as", "às", "de", "da", "das", "do", "dos", "acoes", "apoiar", "quanto", "relacionadas", "nestas", "tecnologias",
         "e", "em", "na", "nas", "no", "nos", "o", "os", "um", "uma", "umas", "uns", "voce","qualificacoes", "companhia", "sua", "dentro",
-        "com", "por", "para", "se", "não", "sim", "como", "mas", "ou", "nem", "geral", "estrutura", "entre", "outras", "nosso", "junto",
+        "com", "por", "para", "se", "não", "sim", "como", "mas", "ou", "nem", "geral", "estrutura", "entre", "outras", "nosso", "junto", "atuacao",
         "também", "mais", "então", "são", "foi", "era", "é", "ser", "tem", "identificacao", "visao", "or", "on", "tudo", "auxiliar", "fabricante",
         "há", "já", "está", "sendo", "pelo", "pelos", "pela", "pelas", "sobre", "etc", "time","times", "atribuicoes", "ser", "promotora", "impactam",
         "qual", "quem", "que", "papel", "nossos", "sera", "requisitos", "qualificações", "esperamos", "você", "atribuições", "dar", "necessario","possua",
         "será", "seu", "momentos", "operar", "rapida", "usando", "maneira", "padrões", "cenarios", "ter", "atuar","menos", "preferencialmente", "bons", "entendimento", 
         "uso", "tiver", "baseados", "participativa", "interação", "outros", "pessoa", "conquista", "projetar", "enfase", "orientar", "demais", "bom",
-        "atendendo", "solicitações", "ações", "modo", "tempo", "diminuir", "ênfase", "solucoes", "possibilitar", "abstraindo", "camada", "manter",
-        "trata", "las", "completo", "final", "pontos", "boas", "auto", "enviar", "criar", "basico", "desejavel", "superior"
+        "atendendo", "solicitações", "ações", "modo", "tempo", "diminuir", "ênfase", "solucoes", "possibilitar", "abstraindo", "camada", "manter", "areas",
+        "trata", "las", "completo", "final", "pontos", "boas", "auto", "enviar", "criar", "basico", "desejavel", "superior", "ocorra", "incluindo", "todas"
     ];
 
     // Função para normalizar texto removendo acentos e pontuações
