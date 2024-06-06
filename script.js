@@ -1,7 +1,7 @@
 document.getElementById('calcular').addEventListener('click', function() {
     const textoVaga = document.getElementById('vaga').value.toLowerCase();
     const textoCurriculo = document.getElementById('curriculo').value.toLowerCase();
-
+    const palavrasIgnorar = document.getElementById('ignore').value.toLowerCase().split(/\s+/);
     const stopWords = [
         "a", "à", "ao", "aos", "as", "às", "de", "da", "das", "do", "dos", "acoes", "apoiar", "quanto", "relacionadas", "nestas", "tecnologias",
         "e", "em", "na", "nas", "no", "nos", "o", "os", "um", "uma", "umas", "uns", "voce","qualificacoes", "companhia", "sua", "dentro",
@@ -13,8 +13,10 @@ document.getElementById('calcular').addEventListener('click', function() {
         "uso", "tiver", "baseados", "participativa", "interação", "outros", "pessoa", "conquista", "projetar", "enfase", "orientar", "demais", "bom",
         "atendendo", "solicitações", "ações", "modo", "tempo", "diminuir", "ênfase", "solucoes", "possibilitar", "abstraindo", "camada", "manter", "areas",
         "trata", "las", "completo", "final", "pontos", "boas", "auto", "enviar", "criar", "basico", "desejavel", "superior", "ocorra", "incluindo", "todas",
-        "fazer", "realizar", "atividades", "montar", "atraves", "providenciando", "cuidar", "fim", "especifico", "sistema", "suas", "minas"
+        "fazer", "realizar", "atividades", "montar", "atraves", "providenciando", "cuidar", "fim", "especifico", "sistema", "suas", "minas", "vaga", "vagas", "elaborar", "monitorar",
+        "conforme", "necessidade", "todo", "todos", "toda", "todas", "grupos", "grupo", "itens", "setor", "lancando", "medio", "desejaveis", "minimo"
     ];
+    const allStopWords = [...new Set([...stopWords, ...palavrasIgnorar])];
 
     function normalize(text) {
         return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^\w\s]/gi, '');
@@ -23,7 +25,7 @@ document.getElementById('calcular').addEventListener('click', function() {
     function tokenizeAndFilter(text) {
         return text.split(/\s+/)
             .map(word => normalize(word.toLowerCase()))
-            .filter(word => !stopWords.includes(word));
+            .filter(word => !allStopWords.includes(word));
     }
 
     const filteredTokensVaga = tokenizeAndFilter(textoVaga);

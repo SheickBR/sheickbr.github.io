@@ -78,6 +78,11 @@ button:hover {
     border-left: 0.3125em solid #ffc107;
 }
 
+#ignore {
+    height: auto;
+    min-height: 3em;
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
     .container {
