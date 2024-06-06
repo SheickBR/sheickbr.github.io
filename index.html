@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Currículo e Vaga</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Análise de Currículo e Vaga</h1>
+        <div class="input-group">
+            <label for="vaga">Texto da Vaga:</label>
+            <textarea id="vaga" rows="10" placeholder="Insira aqui os requistos e responsabilidades da vaga de emprego"></textarea>
+        </div>
+        <div class="input-group">
+            <label for="curriculo">Texto do Currículo:</label>
+            <textarea id="curriculo" rows="10" placeholder="Insira aqui o texto do seu currículo"></textarea>
+        </div>
+        <button id="calcular">Calcular Aderência</button>
+        <div id="resultado" class="resultado"></div>
+        <div id="sugestao" class="sugestao"></div>
+    </div>
+    <script src="https://unpkg.com/compromise@13.11.3/builds/compromise.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
