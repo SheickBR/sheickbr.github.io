@@ -1,7 +1,10 @@
 document.getElementById('calcular').addEventListener('click', function() {
     const textoVaga = document.getElementById('vaga').value.toLowerCase();
     const textoCurriculo = document.getElementById('curriculo').value.toLowerCase();
-    const palavrasIgnorar = document.getElementById('ignore').value.toLowerCase().split(/\s+/);
+    
+    // Tratando as palavras a ignorar para considerar vírgulas
+    const palavrasIgnorarRaw = document.getElementById('ignore').value.toLowerCase();
+    const palavrasIgnorar = palavrasIgnorarRaw.split(/[,\s]+/).filter(word => word.trim() !== "");
 
     const stopWords = [
         "a", "à", "ao", "aos", "as", "às", "de", "da", "das", "do", "dos", "acoes", "apoiar", "quanto", "relacionadas", "nestas", "tecnologias",
@@ -48,7 +51,8 @@ document.getElementById('calcular').addEventListener('click', function() {
 
     document.getElementById('resultado').innerHTML = resultado;
 
-    const termosSugeridos = filteredTokensVaga.filter(term => !filteredTokensCurriculo.includes(term));
+    // Removendo palavras ignoradas das sugestões
+    const termosSugeridos = filteredTokensVaga.filter(term => !filteredTokensCurriculo.includes(term) && !allStopWords.includes(term));
     let sugestao = `Sugestões de termos a serem incluídos no currículo:<br> ${[...new Set(termosSugeridos)].join(', ')}`;
 
     document.getElementById('sugestao').innerHTML = sugestao;
