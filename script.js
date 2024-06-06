@@ -6,12 +6,12 @@ document.getElementById('calcular').addEventListener('click', function() {
     const stopWords = [
         "a", "à", "ao", "aos", "as", "às", "de", "da", "das", "do", "dos",
         "e", "em", "na", "nas", "no", "nos", "o", "os", "um", "uma", "umas", "uns",
-        "com", "por", "para", "que", "se", "não", "sim", "como", "mas", "ou", "nem",
-        "também", "mais", "então", "são", "foi", "era", "é", "são", "ser", "tem",
+        "com", "por", "para", "se", "não", "sim", "como", "mas", "ou", "nem",
+        "também", "mais", "então", "são", "foi", "era", "é", "ser", "tem",
         "há", "já", "está", "sendo", "pelo", "pelos", "pela", "pelas", "sobre", "etc", "time","times", "atribuicoes",
         "qual", "quem", "que", "papel", "nossos", "sera", "requisitos", "qualificações", "esperamos", "você", "atribuições",
         "será", "seu", "momentos", "operar", "rapida", "usando", "maneira", "padrões", "cenarios", "ter", "atuar",
-        "uso", "tiver", "baseados", "participativa", "interação", "outros", "pessoa", "conquista", "projetar,","projetar", "enfase", "orientar", "demais",
+        "uso", "tiver", "baseados", "participativa", "interação", "outros", "pessoa", "conquista", "projetar", "enfase", "orientar", "demais",
         "atendendo", "solicitações", "ações", "modo", "tempo", "diminuir", "ênfase", "soluções", "possibilitar", "abstraindo", "camada", "manter"
     ];
 
@@ -24,7 +24,9 @@ document.getElementById('calcular').addEventListener('click', function() {
     function tokenizeAndFilter(text) {
         const doc = nlp(text);
         const tokens = doc.terms().out('array');
-        return tokens.filter(word => !stopWords.includes(word)).map(word => normalize(word.toLowerCase()));
+        return tokens
+            .map(word => normalize(word.toLowerCase()))
+            .filter(word => !stopWords.includes(word));
     }
 
     const filteredTokensVaga = tokenizeAndFilter(textoVaga);
