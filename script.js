@@ -31,35 +31,41 @@ document.getElementById('calcular').addEventListener('click', function() {
     const filteredTokensVaga = tokenizeAndFilter(textoVaga);
     const filteredTokensCurriculo = tokenizeAndFilter(textoCurriculo);
 
-    const tfidf = {};
+    function calculateTfidf(docs) {
+        const tfidf = {};
+        const docCount = docs.length;
+
+        docs.forEach((doc, docIndex) => {
+            const terms = doc.split(/\s+/);
+            const termFreq = {};
+
+            terms.forEach(term => {
+                termFreq[term] = (termFreq[term] || 0) + 1;
+            });
+
+            Object.keys(termFreq).forEach(term => {
+                const tf = termFreq[term] / terms.length;
+                if (!tfidf[term]) {
+                    tfidf[term] = { tf: Array(docCount).fill(0), idf: 0 };
+                }
+                tfidf[term].tf[docIndex] = tf;
+            });
+        });
+
+        Object.keys(tfidf).forEach(term => {
+            const df = tfidf[term].tf.filter(f => f > 0).length;
+            tfidf[term].idf = Math.log(docCount / (df + 1)) + 1;
+        });
+
+        return tfidf;
+    }
+
     const docs = [filteredTokensVaga.join(' '), filteredTokensCurriculo.join(' ')];
-    const docCount = docs.length;
-
-    docs.forEach((doc, docIndex) => {
-        const terms = doc.split(/\s+/);
-        const termFreq = {};
-
-        terms.forEach(term => {
-            termFreq[term] = (termFreq[term] || 0) + 1;
-        });
-
-        Object.keys(termFreq).forEach(term => {
-            const tf = termFreq[term] / terms.length;
-            if (!tfidf[term]) {
-                tfidf[term] = { tf: Array(docCount).fill(0), idf: 0 };
-            }
-            tfidf[term].tf[docIndex] = tf;
-        });
-    });
-
-    Object.keys(tfidf).forEach(term => {
-        const df = tfidf[term].tf.filter(f => f > 0).length;
-        tfidf[term].idf = Math.log(docCount / (df + 1)) + 1;
-    });
+    const tfidf = calculateTfidf(docs);
 
     let commonTerms = [];
-    Object.keys(tfidf).forEach(term => {
-        if (filteredTokensCurriculo.includes(term) && filteredTokensVaga.includes(term)) {
+    filteredTokensVaga.forEach(term => {
+        if (filteredTokensCurriculo.includes(term)) {
             commonTerms.push(term);
         }
     });
