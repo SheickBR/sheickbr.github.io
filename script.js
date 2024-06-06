@@ -12,7 +12,8 @@ document.getElementById('calcular').addEventListener('click', function() {
         "será", "seu", "momentos", "operar", "rapida", "usando", "maneira", "padrões", "cenarios", "ter", "atuar","menos", "preferencialmente", "bons", "entendimento", 
         "uso", "tiver", "baseados", "participativa", "interação", "outros", "pessoa", "conquista", "projetar", "enfase", "orientar", "demais", "bom",
         "atendendo", "solicitações", "ações", "modo", "tempo", "diminuir", "ênfase", "solucoes", "possibilitar", "abstraindo", "camada", "manter", "areas",
-        "trata", "las", "completo", "final", "pontos", "boas", "auto", "enviar", "criar", "basico", "desejavel", "superior", "ocorra", "incluindo", "todas"
+        "trata", "las", "completo", "final", "pontos", "boas", "auto", "enviar", "criar", "basico", "desejavel", "superior", "ocorra", "incluindo", "todas",
+        "fazer", "realizar", "atividades", "montar", "atraves", "providenciando", "cuidar", "fim", "especifico", "sistema", "suas", "minas"
     ];
 
     function normalize(text) {
