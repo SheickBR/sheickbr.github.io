@@ -8,10 +8,11 @@ document.getElementById('calcular').addEventListener('click', function() {
         "e", "em", "na", "nas", "no", "nos", "o", "os", "um", "uma", "umas", "uns",
         "com", "por", "para", "que", "se", "não", "sim", "como", "mas", "ou", "nem",
         "também", "mais", "então", "são", "foi", "era", "é", "são", "ser", "tem",
-        "há", "já", "está", "sendo", "pelo", "pelos", "pela", "pelas", "sobre", "etc", "time", "atribuicoes",
+        "há", "já", "está", "sendo", "pelo", "pelos", "pela", "pelas", "sobre", "etc", "time","times", "atribuicoes",
         "qual", "quem", "que", "papel", "nossos", "sera", "requisitos", "qualificações", "esperamos", "você", "atribuições",
         "será", "seu", "momentos", "operar", "rapida", "usando", "maneira", "padrões", "cenarios", "ter", "atuar",
-        "uso", "tiver", "baseados", "participativa", "interação", "outros", "pessoa", "conquista"
+        "uso", "tiver", "baseados", "participativa", "interação", "outros", "pessoa", "conquista", "projetar", "enfase", "orientar", "demais",
+        "atendendo", "solicitações", "ações", "modo", "tempo", "diminuir"
     ];
 
     // Função para normalizar texto removendo acentos e pontuações
