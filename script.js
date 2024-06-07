@@ -18,7 +18,8 @@ document.getElementById('calcular').addEventListener('click', function() {
         "atendendo", "solicitações", "ações", "modo", "tempo", "diminuir", "ênfase", "solucoes", "possibilitar", "abstraindo", "camada", "manter", "areas",
         "trata", "las", "completo", "final", "pontos", "boas", "auto", "enviar", "criar", "basico", "desejavel", "superior", "ocorra", "incluindo", "todas",
         "fazer", "realizar", "atividades", "montar", "atraves", "providenciando", "cuidar", "fim", "especifico", "sistema", "suas", "minas", "vaga", "vagas", "elaborar", "monitorar",
-        "conforme", "necessidade", "todo", "todos", "toda", "todas", "grupos", "grupo", "itens", "setor", "lancando", "medio", "desejaveis", "minimo", "utilizandose", "prover"
+        "conforme", "necessidade", "todo", "todos", "toda", "todas", "grupos", "grupo", "itens", "setor", "lancando", "medio", "desejaveis", "minimo", "utilizandose", "prover",
+        "partir", "parte", "precisa", "eou", "minimamente", "exercer", "atual"
     ];
 
     // Adicionando as palavras a serem ignoradas às stopWords
